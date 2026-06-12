@@ -1,0 +1,10 @@
+services:
+  circuit-heal:
+    image: ghcr.io/jtruland/circuit-heal:latest
+    container_name: circuit-heal
+    init: true
+    restart: unless-stopped
+    mem_limit: 64m
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    env_file: .env
